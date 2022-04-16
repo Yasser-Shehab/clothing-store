@@ -1,7 +1,29 @@
-import React from "react";
+import "./Style/Hero.style.css";
+import girl from "./Style/heroSubject.png";
 
-function Hero() {
-  return <div>Hero</div>;
-}
+const Hero = () => {
+  return (
+    <div className="hero-container container">
+      <div className="hero-slogan">
+        <div className="hero-title">
+          <h1>
+            Clothes
+            <br />
+            that
+            <br />
+            matters.
+          </h1>
+        </div>
+        <div className="start-btn">
+          <p>START SHOPPING</p>
+        </div>
+      </div>
+
+      <div className="hero-image">
+        <img className="hero__girl" src={girl} />
+      </div>
+    </div>
+  );
+};
 
 export default Hero;
