@@ -59,6 +59,12 @@
 .start-btn p::after {
   content: "❯";
   margin-left: 1rem;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+}
+
+.start-btn p:hover::after {
+  margin-left: 1.4rem;
 }
 
 .hero__girl {

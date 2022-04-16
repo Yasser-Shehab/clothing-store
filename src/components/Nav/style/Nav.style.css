@@ -137,6 +137,10 @@
   background: #eae7e7;
 }
 
+.nav-logo {
+  cursor: pointer;
+}
+
 .nav-logo img {
   width: 15.5rem;
 }

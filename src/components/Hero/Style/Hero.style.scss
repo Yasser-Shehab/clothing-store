@@ -40,6 +40,10 @@ $primary: #19063d;
     &::after {
       content: "❯";
       margin-left: 1rem;
+      transition: all 0.15s ease-in-out;
+    }
+    &:hover::after {
+      margin-left: 1.4rem;
     }
   }
 }

@@ -5,20 +5,20 @@ import "./style/Nav.style.css";
 function Nav() {
   const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {
-    function watchWidth() {
-      if (window.innerWidth < 768) {
-        setIsMobile(true);
-      } else {
-        setIsMobile(false);
-      }
-    }
-    window.addEventListener("resize", watchWidth);
+  // useEffect(() => {
+  //   function watchWidth() {
+  //     if (window.innerWidth < 768) {
+  //       setIsMobile(true);
+  //     } else {
+  //       setIsMobile(false);
+  //     }
+  //   }
+  //   window.addEventListener("resize", watchWidth);
 
-    return function () {
-      window.removeEventListener("resize", watchWidth);
-    };
-  }, []);
+  //   return function () {
+  //     window.removeEventListener("resize", watchWidth);
+  //   };
+  // }, []);
 
   function toggle() {
     setIsMobile((prev) => !prev);
