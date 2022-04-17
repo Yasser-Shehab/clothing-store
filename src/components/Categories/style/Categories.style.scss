@@ -1,5 +1,6 @@
+//!Mobile
 .Categories-container {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   display: grid;
   align-items: center;
@@ -21,8 +22,11 @@
       width: 230px;
     }
     &:hover {
+      cursor: pointer;
+      background-color: darken($color: #2b2d42, $amount: 6);
+      transition: all 0.5s ease-in-out;
       .category__image {
-        transition: all 0.15s ease-in-out;
+        transition: all 0.3s ease-in-out;
         transform: scale(1.1);
       }
     }
@@ -49,7 +53,7 @@
 .category-main-container {
   position: relative;
   display: flex;
-  width: 400px;
+  width: 370px;
   border-radius: 10px;
   margin-top: 7rem;
   height: 200px;
@@ -90,8 +94,14 @@
       }
     }
   }
+  &:hover {
+    cursor: pointer;
+    background-color: darken($color: #2b2d42, $amount: 6);
+    transition: all 0.5s ease-in-out;
+  }
 }
 
+//!Tablet
 @media only screen and(min-width:1130px) {
   .Categories-container {
     width: 1044px;
@@ -120,14 +130,16 @@
       height: 350px;
     }
     .category__title {
-      margin-left: 260px;
+      margin-left: 300px;
+      margin-bottom: 20px;
       h1 {
-        margin-bottom: 0.9rem;
+        margin-bottom: -0.9rem;
       }
     }
   }
 }
 
+//!Desktop
 @media only screen and(min-width:1250px) {
   .Categories-container {
     width: 1044px;
@@ -147,41 +159,7 @@
     width: 512px;
     height: 30rem;
     border-radius: 4rem;
+    .category__title {
+    }
   }
 }
-
-// @media only screen and(min-width:1024px) {
-//   .Categories-container {
-//     width: 1044px;
-//     grid-template-columns: repeat(6, 1fr);
-//     grid-template-rows: auto;
-//     gap: 2rem;
-
-//     .category-container {
-//       border-radius: 4rem;
-//       width: 340px;
-//       grid-column: span 2;
-//     }
-//   }
-
-//   .category-main-container {
-//     grid-column: span 3;
-//     // width: 100%;
-//     width: 512px;
-//     height: 30rem;
-//     border-radius: 4rem;
-
-//     .category__image {
-//       position: absolute;
-//       bottom: 0;
-//       left: 20px;
-//       height: 350px;
-//     }
-//     .category__title {
-//       margin-left: 260px;
-//       h1 {
-//         margin-bottom: 0.9rem;
-//       }
-//     }
-//   }
-// }
