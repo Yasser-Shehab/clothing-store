@@ -75,3 +75,13 @@ $primary: #19063d;
     min-width: 450px;
   }
 }
+
+//!Tablet Screens
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero-title {
+    h1 {
+      margin-top: 0;
+      font-size: 6.5rem;
+    }
+  }
+}
