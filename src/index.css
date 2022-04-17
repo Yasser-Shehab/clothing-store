@@ -1,9 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fredoka+One&display=swap");
 
+:root {
+  --color-main: #19063d;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Bebas Neue", Arial, Helvetica, sans-serif;
+  /* color: var(--color-main); */
 }
 
 html {

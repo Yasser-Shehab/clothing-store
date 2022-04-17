@@ -1,151 +1,121 @@
-$primary: #19063d;
-
-.nav-container {
+.nav {
   background: linear-gradient(270deg, #f2f2f2 0%, #ffffff 100%);
-  overflow: hidden;
+  width: 100vw;
+  height: 8rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.navbar {
+.navbar-container {
+  height: 100%;
+  width: 80vw;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
-  height: 10rem;
-  border-bottom: 1px solid #e5e2e2;
-  .menu-btn {
-    position: relative;
+}
+
+.nav-links-wrapper {
+  position: absolute;
+  top: 8rem;
+  left: 0rem;
+  width: 100vw;
+  height: 0;
+  overflow: hidden;
+  background: linear-gradient(270deg, #f2f2f2 0%, #ffffff 100%);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+
+  li {
+    color: var(--color-main);
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 80px;
-    height: 80px;
+    justify-content: center;
+    height: 8rem;
     cursor: pointer;
-    transition: all 0.5s ease-in-out;
+    list-style: none;
+    padding: 0 1.5rem;
+    font-size: 2.2rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+    &:hover {
+      transform: scale(1.07);
+    }
   }
-  .menu-btn__burger {
-    width: 40px;
-    height: 5px;
-    background: $primary;
+
+  .nav__cart {
+    width: 2.4rem;
+  }
+}
+
+.open {
+  height: auto;
+}
+
+.logo {
+  width: 12rem;
+}
+
+//!Burger Menu
+
+.menu-btn {
+  display: flex;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.menu-btn__burger {
+  width: 100%;
+  height: 3px;
+  background: var(--color-main);
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+  transition: all 0.5s ease-in-out;
+
+  &::before {
+    transform: translateY(-9px);
+  }
+  &::after {
+    transform: translateY(9px);
+  }
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 35px;
+    height: 3px;
+    background: var(--color-main);
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
     transition: all 0.5s ease-in-out;
+  }
+}
 
-    &::before {
-      transform: translateY(-12px);
-    }
-    &::after {
-      transform: translateY(12px);
-    }
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      width: 40px;
-      height: 5px;
-      background: $primary;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
-      transition: all 0.5s ease-in-out;
-    }
-  }
-  .nav-links-mobile {
-    display: flex;
-    flex-direction: column;
-    top: 10rem;
-    justify-content: center;
-    width: 100%;
-    align-items: center;
-    position: fixed;
-    background: linear-gradient(270deg, #f2f2f2 0%, #ffffff 100%);
-    left: 0rem;
-    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.09);
-    max-height: 9999px;
-    opacity: 1;
-    transition: all 1s ease-in-out;
-    overflow: hidden;
-    li {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 10rem;
-      font-family: "Bebas Neue", cursive;
-      font-size: 3rem;
-      list-style: none;
-      border-bottom: 1px solid #e5e2e2;
-      width: 100%;
-      text-align: center;
-      cursor: pointer;
-      &:hover {
-        transition: all 0.15s ease-in-out;
-        background: lighten($color: #e5e2e2, $amount: 2);
-      }
-    }
-    .nav__cart {
-      margin-top: 3rem;
-      margin-bottom: 3rem;
-      width: 4rem;
-      height: 4rem;
-      &:hover {
-        background: lighten($color: #e5e2e2, $amount: 2);
-      }
-    }
-  }
-}
-.nav-logo {
-  cursor: pointer;
-  img {
-    width: 15.5rem;
-  }
-}
-/*  Animation  */
-.menu-btn.open .menu-btn__burger {
+.cross {
   transform: translateX(-50px);
   background: transparent;
   box-shadow: none;
-}
-.menu-btn.open .menu-btn__burger::before {
-  transform: rotate(45deg) translate(35px, -35px);
-}
-.menu-btn.open .menu-btn__burger::after {
-  transform: rotate(-45deg) translate(35px, 35px);
+
+  &:before {
+    transform: rotate(45deg) translate(35px, -35px);
+  }
+
+  &:after {
+    transform: rotate(-45deg) translate(35px, 35px);
+  }
 }
 
-.nav-links {
-  display: none;
-  // max-height: 0;
-}
-
-// Navigation Links
-
-@media only screen and(min-width:1024px) {
-  .menu-btn__burger {
+@media screen and (min-width: 768px) {
+  .menu-btn {
     display: none;
   }
-  .nav-links {
+
+  .nav-links-wrapper {
+    width: auto;
+    height: auto;
     display: flex;
-    li {
-      margin: 0 3rem;
-      cursor: pointer;
-      font-family: "Bebas Neue", cursive;
-      font-size: 3rem;
-      color: $primary;
-      list-style: none;
-      &:hover {
-        color: lighten($color: $primary, $amount: 5);
-        transform: scale(1.1);
-        transition: all 0.15s ease-in-out;
-      }
-    }
-    .nav__cart {
-      width: 4rem;
-      height: 4rem;
-      &:hover {
-        transform: scale(1.1);
-        transition: all 0.15s ease-in-out;
-      }
-    }
+    position: unset;
+    box-shadow: none;
+    background: transparent;
   }
 }
-
-//-------------------------------
-// Hero Style
