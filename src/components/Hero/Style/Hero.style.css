@@ -97,7 +97,7 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 900px) {
+@media (min-width: 768px) and (max-width: 1150px) {
   .hero-title h1 {
     margin-top: 0;
     font-size: 6.5rem;
