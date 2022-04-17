@@ -1,0 +1,30 @@
+$primary: #19063d;
+
+.title-block {
+  margin-top: 4.1rem;
+  h1 {
+    color: $primary;
+    font-size: 3.5rem;
+    text-align: center;
+    font-family: "Fredoka One", cursive;
+  }
+  p {
+    text-align: center;
+    font-family: "Bebas Neue", cursive;
+    font-size: 2rem;
+    opacity: 0.5;
+    margin-top: 1.7rem;
+  }
+}
+
+@media only screen and(min-width:1024px) {
+  .title-block {
+    margin-top: 6.5rem;
+    h1 {
+      font-size: 5.5rem;
+    }
+    p {
+      font-size: 3rem;
+    }
+  }
+}
