@@ -33,7 +33,7 @@ function Nav() {
         <div onClick={toggle} className={isMobile ? "menu-btn open" : "menu-btn"}>
           <div className="menu-btn__burger"></div>
         </div>
-        <div className={isMobile ? "nav-links-mobile" : "nav-links"}>
+        <div className={isMobile ? "nav-links mobile" : "nav-links"}>
           <li>SHOP</li>
           <li>CONTACT</li>
           <li>SIGN IN</li>

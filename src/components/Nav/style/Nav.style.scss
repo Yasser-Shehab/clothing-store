@@ -9,7 +9,6 @@ $primary: #19063d;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // padding: 0 2rem;
   width: 80%;
   height: 10rem;
   border-bottom: 1px solid #e5e2e2;
@@ -129,6 +128,7 @@ $primary: #19063d;
       cursor: pointer;
       font-family: "Bebas Neue", cursive;
       font-size: 3rem;
+      color: $primary;
       list-style: none;
       &:hover {
         color: lighten($color: $primary, $amount: 5);
