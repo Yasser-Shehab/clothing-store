@@ -164,4 +164,78 @@
 //   }
 // }
 
+$primary: #2b2d42;
+
 //!Mobile
+.Categories-container {
+  display: grid;
+  gap: 4rem;
+  justify-items: center;
+  margin-top: 12rem;
+}
+.category-gender {
+  display: flex;
+  align-items: flex-end;
+  padding: 0 2rem;
+  border-radius: 1.5rem;
+  background-color: $primary;
+  color: #fff;
+  width: 90%;
+  max-width: 500px;
+  height: 20rem;
+  &:nth-child(1) {
+    margin-bottom: 10rem;
+  }
+  .category__title {
+    margin-left: 5rem;
+    margin-bottom: 2.5rem;
+    h1 {
+      font-size: 4rem;
+      font-weight: 300;
+    }
+    p {
+      font-size: 2rem;
+      opacity: 0.9;
+      &::after {
+        content: "❯";
+        margin-left: 1rem;
+      }
+    }
+  }
+  .category__image {
+    width: 150px;
+  }
+}
+
+.category-item {
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1rem;
+  width: 70%;
+  min-width: 200px;
+  background-color: $primary;
+  .category__image {
+    width: 270px;
+  }
+  .category__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    margin-top: -4rem;
+    padding-bottom: 2rem;
+    h1 {
+      font-size: 5rem;
+    }
+    p {
+      font-size: 3rem;
+      opacity: 0.9;
+      &::after {
+        content: "❯";
+        margin-left: 1rem;
+      }
+    }
+  }
+}

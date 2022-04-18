@@ -1,1 +1,105 @@
-/* No CSS *//*# sourceMappingURL=Categories.style.css.map */
+@charset "UTF-8";
+.Categories-container {
+  display: -ms-grid;
+  display: grid;
+  gap: 4rem;
+  justify-items: center;
+  margin-top: 12rem;
+}
+
+.category-gender {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding: 0 2rem;
+  border-radius: 1.5rem;
+  background-color: #2b2d42;
+  color: #fff;
+  width: 90%;
+  max-width: 500px;
+  height: 20rem;
+}
+
+.category-gender:nth-child(1) {
+  margin-bottom: 10rem;
+}
+
+.category-gender .category__title {
+  margin-left: 5rem;
+  margin-bottom: 2.5rem;
+}
+
+.category-gender .category__title h1 {
+  font-size: 4rem;
+  font-weight: 300;
+}
+
+.category-gender .category__title p {
+  font-size: 2rem;
+  opacity: 0.9;
+}
+
+.category-gender .category__title p::after {
+  content: "❯";
+  margin-left: 1rem;
+}
+
+.category-gender .category__image {
+  width: 150px;
+}
+
+.category-item {
+  margin-top: 6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 1rem;
+  width: 70%;
+  min-width: 200px;
+  background-color: #2b2d42;
+}
+
+.category-item .category__image {
+  width: 270px;
+}
+
+.category-item .category__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  margin-top: -4rem;
+  padding-bottom: 2rem;
+}
+
+.category-item .category__title h1 {
+  font-size: 5rem;
+}
+
+.category-item .category__title p {
+  font-size: 3rem;
+  opacity: 0.9;
+}
+
+.category-item .category__title p::after {
+  content: "❯";
+  margin-left: 1rem;
+}
+/*# sourceMappingURL=Categories.style.css.map */
