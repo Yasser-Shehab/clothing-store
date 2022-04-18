@@ -1,6 +1,6 @@
 @charset "UTF-8";
 .bg-gradient {
-  width: 100vw;
+  width: 100%;
   background: -webkit-gradient(linear, right top, left top, from(#f2f2f2), to(#ffffff));
   background: linear-gradient(270deg, #f2f2f2 0%, #ffffff 100%);
   overflow: hidden;

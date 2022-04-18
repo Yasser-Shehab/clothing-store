@@ -7,7 +7,7 @@ import Title from "../../components/Section-Title/Title";
 function Home() {
   return (
     <>
-      {/* <Nav /> */}
+      <Nav />
       <Hero />
       <Title />
       <Categories />
