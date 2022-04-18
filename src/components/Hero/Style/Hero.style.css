@@ -10,6 +10,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 80%;
 }
 
@@ -71,6 +74,15 @@
   margin-left: 1.4rem;
 }
 
+.hero-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
 .hero__girl {
   width: 400px;
   overflow: hidden;
@@ -94,7 +106,7 @@
 @media only screen and (min-width: 1024px) {
   .hero-title h1 {
     margin-top: 0;
-    font-size: 8.5rem;
+    font-size: 7rem;
   }
   .start-btn {
     width: 20rem;

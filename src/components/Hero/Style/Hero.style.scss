@@ -8,6 +8,7 @@ $primary: #19063d;
 
 .hero-container {
   display: flex;
+  justify-content: space-between;
   width: 80%;
 }
 .hero-title {
@@ -52,6 +53,12 @@ $primary: #19063d;
     }
   }
 }
+
+.hero-image {
+  display: flex;
+  justify-content: end;
+}
+
 .hero__girl {
   width: 400px;
   overflow: hidden;
@@ -75,7 +82,7 @@ $primary: #19063d;
   .hero-title {
     h1 {
       margin-top: 0;
-      font-size: 8.5rem;
+      font-size: 7rem;
     }
   }
   .start-btn {

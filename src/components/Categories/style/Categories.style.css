@@ -28,6 +28,13 @@
   width: 90%;
   max-width: 500px;
   height: 20rem;
+  cursor: pointer;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+}
+
+.category-gender:hover {
+  background-color: #212233;
 }
 
 .category-gender:nth-child(1) {
@@ -37,6 +44,7 @@
 .category-gender .category__title {
   margin-left: 2rem;
   margin-bottom: 2.5rem;
+  cursor: pointer;
 }
 
 .category-gender .category__title h1 {
@@ -52,6 +60,12 @@
 .category-gender .category__title p::after {
   content: "❯";
   margin-left: 1rem;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+}
+
+.category-gender .category__title p:hover::after {
+  margin-left: 1.5rem;
 }
 
 .category-gender .category__image {
@@ -74,6 +88,20 @@
   width: 80%;
   max-width: 300px;
   background-color: #2b2d42;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+}
+
+.category-item:hover {
+  background-color: #212233;
+}
+
+.category-item:hover .category__image {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .category-item .category__image {
@@ -94,6 +122,7 @@
   color: #fff;
   margin-top: -2rem;
   padding-bottom: 2rem;
+  cursor: pointer;
 }
 
 .category-item .category__title h1 {
@@ -110,6 +139,12 @@
   margin-left: 1rem;
 }
 
+.category-item .category__title p:hover::after {
+  margin-left: 1.5rem;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+}
+
 @media only screen and (min-width: 768px) {
   .Categories-container {
     -ms-grid-rows: auto;
@@ -117,6 +152,7 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    margin-top: 8rem;
     gap: 2rem;
   }
   .category-gender {

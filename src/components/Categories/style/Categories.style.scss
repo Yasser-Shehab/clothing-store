@@ -188,12 +188,18 @@ $primary: #2b2d42;
   width: 90%;
   max-width: 500px;
   height: 20rem;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  &:hover {
+    background-color: darken($color: $primary, $amount: 5);
+  }
   &:nth-child(1) {
     margin-bottom: 5rem;
   }
   .category__title {
     margin-left: 2rem;
     margin-bottom: 2.5rem;
+    cursor: pointer;
     h1 {
       font-size: 4rem;
       font-weight: 300;
@@ -204,6 +210,10 @@ $primary: #2b2d42;
       &::after {
         content: "❯";
         margin-left: 1rem;
+        transition: all 0.15s ease-in-out;
+      }
+      &:hover::after {
+        margin-left: 1.5rem;
       }
     }
   }
@@ -220,8 +230,16 @@ $primary: #2b2d42;
   border-radius: 1rem;
   width: 80%;
   max-width: 300px;
-
   background-color: $primary;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    background-color: darken($color: $primary, $amount: 5);
+    .category__image {
+      transition: all 0.2s ease-in-out;
+      transform: scale(1.1);
+    }
+  }
   .category__image {
     width: 200px;
   }
@@ -232,6 +250,7 @@ $primary: #2b2d42;
     color: #fff;
     margin-top: -2rem;
     padding-bottom: 2rem;
+    cursor: pointer;
     h1 {
       font-size: 3.5rem;
     }
@@ -242,6 +261,10 @@ $primary: #2b2d42;
         content: "❯";
         margin-left: 1rem;
       }
+      &:hover::after {
+        margin-left: 1.5rem;
+        transition: all 0.15s ease-in-out;
+      }
     }
   }
 }
@@ -251,6 +274,7 @@ $primary: #2b2d42;
   .Categories-container {
     grid-template-rows: auto;
     align-items: center;
+    margin-top: 8rem;
     gap: 2rem;
   }
 
@@ -281,6 +305,7 @@ $primary: #2b2d42;
     min-width: none;
     height: 300px;
     border-radius: 4rem;
+
     .category__title {
       margin-left: 7rem;
       margin-bottom: 5rem;
