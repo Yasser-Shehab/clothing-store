@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import Hero from "../Hero/Hero";
+import { useState } from "react";
 import "./style/Nav.style.css";
 
 function Nav() {
