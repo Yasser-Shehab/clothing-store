@@ -169,14 +169,19 @@ $primary: #2b2d42;
 //!Mobile
 .Categories-container {
   display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto;
   gap: 4rem;
   justify-items: center;
+  width: 90vw;
+  margin: 0 auto;
   margin-top: 12rem;
 }
 .category-gender {
+  grid-column: span 6;
   display: flex;
   align-items: flex-end;
-  padding: 0 2rem;
+  padding: 0 1rem;
   border-radius: 1.5rem;
   background-color: $primary;
   color: #fff;
@@ -184,10 +189,10 @@ $primary: #2b2d42;
   max-width: 500px;
   height: 20rem;
   &:nth-child(1) {
-    margin-bottom: 10rem;
+    margin-bottom: 5rem;
   }
   .category__title {
-    margin-left: 3rem;
+    margin-left: 2rem;
     margin-bottom: 2.5rem;
     h1 {
       font-size: 4rem;
@@ -203,39 +208,90 @@ $primary: #2b2d42;
     }
   }
   .category__image {
-    width: 140px;
+    width: 130px;
   }
 }
 
 .category-item {
-  margin-top: 6rem;
+  grid-column: span 6;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 1rem;
   width: 80%;
-  min-width: 200px;
+  max-width: 300px;
+
   background-color: $primary;
   .category__image {
-    width: 270px;
+    width: 200px;
   }
   .category__title {
     display: flex;
     flex-direction: column;
     align-items: center;
     color: #fff;
-    margin-top: -4rem;
+    margin-top: -2rem;
     padding-bottom: 2rem;
     h1 {
-      font-size: 5rem;
+      font-size: 3.5rem;
     }
     p {
-      font-size: 3rem;
+      font-size: 2rem;
       opacity: 0.9;
       &::after {
         content: "❯";
         margin-left: 1rem;
       }
     }
+  }
+}
+
+//!Tablet
+@media only screen and(min-width:768px) {
+  .Categories-container {
+    grid-template-rows: auto;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .category-gender {
+    grid-column: span 3;
+    width: 100%;
+    max-width: 600px;
+    &:first-child {
+      margin-bottom: 0;
+    }
+  }
+  .category-item {
+    margin-top: 0;
+    width: 95%;
+    grid-column: span 2;
+  }
+}
+//!Desktop
+@media only screen and(min-width:1024px) {
+  .Categories-container {
+    width: 90%;
+    max-width: 1200px;
+    margin-top: 15rem;
+    row-gap: 6rem;
+  }
+  .category-gender {
+    max-width: 560px;
+    min-width: none;
+    height: 300px;
+    border-radius: 4rem;
+    .category__title {
+      margin-left: 7rem;
+      margin-bottom: 5rem;
+    }
+    .category__image {
+      width: 200px;
+    }
+  }
+  .category-item {
+    width: 90%;
+    max-width: 350px;
+    border-radius: 4rem;
   }
 }
