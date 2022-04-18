@@ -10,6 +10,7 @@
 .navbar-container {
   height: 100%;
   width: 80vw;
+  max-width: 1200px;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -20,6 +21,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .nav-links-wrapper {

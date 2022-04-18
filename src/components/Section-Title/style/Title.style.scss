@@ -2,6 +2,7 @@ $primary: #19063d;
 
 .title-block {
   margin-top: 4.1rem;
+
   h1 {
     color: $primary;
     font-size: 3.5rem;
@@ -20,6 +21,7 @@ $primary: #19063d;
 @media only screen and(min-width:1024px) {
   .title-block {
     margin-top: 6.5rem;
+
     h1 {
       font-size: 5.5rem;
     }
