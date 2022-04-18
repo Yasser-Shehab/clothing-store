@@ -28,7 +28,7 @@
 }
 
 .category-gender .category__title {
-  margin-left: 5rem;
+  margin-left: 4rem;
   margin-bottom: 2.5rem;
 }
 
@@ -64,7 +64,7 @@
       -ms-flex-align: center;
           align-items: center;
   border-radius: 1rem;
-  width: 70%;
+  width: 80%;
   min-width: 200px;
   background-color: #2b2d42;
 }
