@@ -37,6 +37,7 @@
           box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
 }
 
+.nav-links-wrapper .nav-link,
 .nav-links-wrapper li {
   color: var(--color-main);
   display: -webkit-box;
@@ -56,6 +57,7 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
+.nav-links-wrapper .nav-link:hover,
 .nav-links-wrapper li:hover {
   -webkit-transform: scale(1.07);
           transform: scale(1.07);

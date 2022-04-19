@@ -5,7 +5,7 @@ function Categories() {
     <div className="Categories-container">
       {data.map((category) => {
         return (
-          <div className={category.id <= 2 ? "category-gender" : "category-item"}>
+          <div key={category.id} className={category.id <= 2 ? "category-gender" : "category-item"}>
             <img className="category__image" src={category.image} alt={category.title} />
             <div className="category__title">
               <h1>{category.title}</h1>

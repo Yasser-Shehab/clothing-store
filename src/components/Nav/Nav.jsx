@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Outlet, Link } from "react-router-dom";
 import "./style/Nav.style.css";
 
 function Nav() {
@@ -13,21 +14,30 @@ function Nav() {
       <nav className="nav">
         <div className="navbar-container">
           <div className="nav-logo">
-            <img className="logo" src={process.env.PUBLIC_URL + "assets/images/logo.svg"} />
+            <Link to="/">
+              <img className="logo" src={process.env.PUBLIC_URL + "assets/images/logo.svg"} />
+            </Link>
           </div>
           <div className="menu-btn" onClick={toggle}>
             <div className={mobileMenuOpen ? "menu-btn__burger cross" : "menu-btn__burger"}></div>
           </div>
           <div className={mobileMenuOpen ? "nav-links-wrapper open" : "nav-links-wrapper"}>
-            <li>SHOP</li>
-            <li>CONTACT</li>
-            <li>SIGN IN</li>
-            <li>
+            <Link className="nav-link" to="/shop">
+              SHOP
+            </Link>
+            <Link className="nav-link" to="/contact">
+              CONTACT
+            </Link>
+            <Link className="nav-link" to="/sign-in">
+              SIGN IN
+            </Link>
+            <Link className="nav-link" to="">
               <img className="nav__cart" src={process.env.PUBLIC_URL + "assets/images/bag.svg"} />
-            </li>
+            </Link>
           </div>
         </div>
       </nav>
+      <Outlet />
     </>
   );
 }

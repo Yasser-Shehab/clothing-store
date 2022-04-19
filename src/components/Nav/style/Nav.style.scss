@@ -26,6 +26,7 @@
   background: linear-gradient(270deg, #f2f2f2 0%, #ffffff 100%);
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
 
+  .nav-link,
   li {
     color: var(--color-main);
     display: flex;
@@ -34,6 +35,7 @@
     height: 8rem;
     cursor: pointer;
     list-style: none;
+
     padding: 0 1.5rem;
     font-size: 2.2rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
