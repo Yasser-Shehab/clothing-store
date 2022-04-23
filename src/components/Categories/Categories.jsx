@@ -1,4 +1,4 @@
-import "./style/Categories.style.css";
+import "./style/Categories.style.scss";
 import data from "./Categories-Data";
 function Categories() {
   return (

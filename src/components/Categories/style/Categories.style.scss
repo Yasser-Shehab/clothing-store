@@ -8,8 +8,7 @@ $primary: #2b2d42;
   gap: 4rem;
   justify-items: center;
   width: 90vw;
-  margin: 0 auto;
-  margin-top: 12rem;
+  margin: 12rem auto;
 }
 .category-gender {
   grid-column: span 6;
@@ -24,9 +23,7 @@ $primary: #2b2d42;
   height: 20rem;
   cursor: pointer;
   transition: all 0.15s ease-in-out;
-  &:hover {
-    background-color: darken($color: $primary, $amount: 5);
-  }
+
   &:nth-child(1) {
     margin-bottom: 5rem;
   }
@@ -43,16 +40,24 @@ $primary: #2b2d42;
       opacity: 0.9;
       &::after {
         content: "❯";
+        display: inline-block;
         margin-left: 1rem;
         transition: all 0.15s ease-in-out;
-      }
-      &:hover::after {
-        margin-left: 1.5rem;
       }
     }
   }
   .category__image {
     width: 130px;
+  }
+  &:hover {
+    background-color: darken($color: $primary, $amount: 5);
+  }
+  &:hover p {
+    &::after {
+      transform: translateX(0.5rem);
+      margin-left: 1.5rem;
+      transition: all 0.15s ease-in-out;
+    }
   }
 }
 
@@ -67,13 +72,7 @@ $primary: #2b2d42;
   background-color: $primary;
   transition: all 0.15s ease-in-out;
   cursor: pointer;
-  &:hover {
-    background-color: darken($color: $primary, $amount: 5);
-    .category__image {
-      transition: all 0.2s ease-in-out;
-      transform: scale(1.1);
-    }
-  }
+
   .category__image {
     width: 200px;
   }
@@ -93,10 +92,20 @@ $primary: #2b2d42;
       opacity: 0.9;
       &::after {
         content: "❯";
+        display: inline-block;
         margin-left: 1rem;
       }
-      &:hover::after {
-        margin-left: 1.5rem;
+    }
+  }
+  &:hover {
+    background-color: darken($color: $primary, $amount: 5);
+    .category__image {
+      transition: all 0.2s ease-in-out;
+      transform: scale(1.1);
+    }
+    & p {
+      &::after {
+        transform: translateX(0.5rem);
         transition: all 0.15s ease-in-out;
       }
     }

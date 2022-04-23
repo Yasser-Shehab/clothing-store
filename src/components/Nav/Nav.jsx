@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Outlet, Link } from "react-router-dom";
-import "./style/Nav.style.css";
+import Footer from "../Footer/Footer";
+import "./style/Nav.style.scss";
 
 function Nav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -38,6 +39,7 @@ function Nav() {
         </div>
       </nav>
       <Outlet />
+      <Footer />
     </>
   );
 }

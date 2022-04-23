@@ -11,7 +11,6 @@ function Home() {
       <Hero />
       <Title />
       <Categories />
-      <Footer />
     </>
   );
 }

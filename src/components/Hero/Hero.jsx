@@ -1,4 +1,4 @@
-import "./Style/Hero.style.css";
+import "./Style/Hero.style.scss";
 import girl from "./Style/heroSubject.png";
 
 const Hero = () => {
