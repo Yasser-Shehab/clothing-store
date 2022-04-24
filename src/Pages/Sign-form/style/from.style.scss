@@ -7,7 +7,7 @@
 }
 
 .form-content {
-  padding: 8rem;
+  padding: 4rem 6rem;
   width: 100%;
   border-radius: 2rem;
   margin: 1rem;
@@ -63,22 +63,15 @@
     position: absolute;
     font-size: 1.6rem;
     letter-spacing: 0.1rem;
-    top: 50%;
-    left: 1.5rem;
-    color: #adadad;
-    transform: translateY(-50%);
-    pointer-events: none;
-    transition: 0.5s ease-in-out;
-  }
-
-  & input:focus ~ label,
-  & input:valid ~ label,
-  & input:empty ~ label {
     top: -2px;
     left: 1rem;
     // color: #2691d9;
     padding: 0 0.5rem;
     background-color: #fff;
+    color: #adadad;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: 0.5s ease-in-out;
   }
 }
 .forgot-pass {
@@ -91,4 +84,43 @@
 }
 .pass:hover {
   text-decoration: underline;
+}
+
+.divider-text {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 2rem;
+  hr {
+    width: 100%;
+  }
+  .divider-header {
+    position: absolute;
+    top: -10px;
+    padding: 0 1rem;
+    background-color: #fff;
+  }
+}
+
+.sign-icons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  .google__icon {
+    font-size: 3rem;
+    cursor: pointer;
+  }
+}
+
+.sign-footer {
+  margin-top: 2rem;
+  span {
+    color: #481f94e0;
+  }
+  p {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+  }
 }

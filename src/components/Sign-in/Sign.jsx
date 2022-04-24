@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { getRedirectResult } from "firebase/auth";
+import { FcGoogle } from "react-icons/fc";
 
 import {
   auth,
@@ -35,6 +36,21 @@ const SignIn = ({ click }) => {
             <a href="#">Forgot Password ?</a>
           </div>
           <input type="submit" value="Login" />
+          <div className="divider-text">
+            <hr />
+            <div className="divider-header">
+              <p>Or continue with</p>
+            </div>
+          </div>
+          <div className="sign-icons">
+            <FcGoogle onClick={logGoogleUser} className="google__icon" />
+          </div>
+          <div className="sign-footer">
+            <p>
+              By Clicking the button above, you agree to our <span>terms of use</span> and
+              <span> privacy policies</span>
+            </p>
+          </div>
         </div>
       </div>
     </>
