@@ -86,6 +86,15 @@
   text-decoration: underline;
 }
 
+.password__icon {
+  position: absolute;
+  font-size: 3rem;
+  right: 10px;
+  top: 10px;
+  color: #494949;
+  cursor: pointer;
+}
+
 .divider-text {
   position: relative;
   display: flex;
@@ -117,6 +126,7 @@
   margin-top: 2rem;
   span {
     color: #481f94e0;
+    cursor: pointer;
   }
   p {
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;

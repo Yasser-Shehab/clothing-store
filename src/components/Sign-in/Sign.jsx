@@ -1,6 +1,7 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getRedirectResult } from "firebase/auth";
 import { FcGoogle } from "react-icons/fc";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
 import {
   auth,
@@ -8,12 +9,15 @@ import {
   signInwithGoogleRedirect,
   createUserDocumentFromAuth,
 } from "../../utils/firebase/firebase.utils";
-import { Link } from "react-router-dom";
 
 const SignIn = ({ click }) => {
+  const [showPass, setShowPass] = useState(false);
   const logGoogleUser = async () => {
     const { user } = await signInWithGooglePopup();
     const userDocRef = await createUserDocumentFromAuth(user);
+  };
+  const togglePassword = () => {
+    setShowPass((prev) => !prev);
   };
 
   return (
@@ -29,8 +33,15 @@ const SignIn = ({ click }) => {
             <label>Email</label>
           </div>
           <div className="text-field">
-            <input type="password" required />
+            <input type={showPass ? "text" : "password"} required />
             <label>Password</label>
+            <div onClick={togglePassword}>
+              {showPass ? (
+                <AiFillEye className="password__icon" />
+              ) : (
+                <AiFillEyeInvisible className="password__icon" />
+              )}
+            </div>
           </div>
           <div className="forgot-pass">
             <a href="#">Forgot Password ?</a>
