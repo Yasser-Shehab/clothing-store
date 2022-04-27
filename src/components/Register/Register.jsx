@@ -4,6 +4,7 @@ import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
 } from "../../utils/firebase/firebase.utils";
+import { Navigate } from "react-router-dom";
 
 const defaultFormData = {
   displayName: "",
@@ -73,9 +74,14 @@ function Register({ click }) {
       await createUserDocumentFromAuth(user, { displayName });
       setFormError((prev) => (prev = ""));
       setformSuccess((prev) => (prev = "Account has been Successfuly created"));
+      setTimeout(() => <Navigate to="/" />, 3000);
     } catch (error) {
-      if (error.code === "auth/email-already-in-use") {
-        setFormError((prev) => (prev = "Email Already In use"));
+      switch (error.code) {
+        case "auth/email-already-in-use":
+          setFormError((prev) => (prev = "Email Already In use"));
+          break;
+        default:
+          setFormError((prev) => (prev = "Encountered an Error"));
       }
       console.log("user signUp Error :", error);
     }
