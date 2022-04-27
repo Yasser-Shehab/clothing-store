@@ -94,7 +94,7 @@ function Register({ click }) {
           <p>
             Already have an account ? <a onClick={click}>Sign in</a>
           </p>
-          <form onSubmit={handleSubmit} className="register-form">
+          <form onSubmit={handleSubmit}>
             {formError && (
               <div className="register-error">
                 <h3>{formError}</h3>

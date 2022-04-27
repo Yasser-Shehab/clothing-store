@@ -10,6 +10,10 @@ import {
 } from "../../utils/firebase/firebase.utils";
 
 const SignIn = ({ click }) => {
+  const [signFields, setSignFields] = useState({
+    email: "",
+    password: "",
+  });
   const [showPass, setShowPass] = useState(false);
   const logGoogleUser = async () => {
     const { user } = await signInWithGooglePopup();
@@ -17,6 +21,11 @@ const SignIn = ({ click }) => {
   };
   const togglePassword = () => {
     setShowPass((prev) => !prev);
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setSignFields({ ...signFields, [name]: value });
   };
 
   return (
@@ -29,12 +38,17 @@ const SignIn = ({ click }) => {
           </p>
           <form>
             <div className="text-field">
-              <input type="email" name="email" required />
-              <label>Email</label>
+              <input type="email" name="email" onChange={handleChange} required />
+              <label className="shrink">Email</label>
             </div>
             <div className="text-field">
-              <input type={showPass ? "text" : "password"} name="password" required />
-              <label>Password</label>
+              <input
+                type={showPass ? "text" : "password"}
+                onChange={handleChange}
+                name="password"
+                required
+              />
+              <label className="shrink">Password</label>
               <div onClick={togglePassword}>
                 {showPass ? (
                   <AiFillEye className="password__icon" />

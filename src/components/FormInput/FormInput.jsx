@@ -8,7 +8,6 @@ function FormInput({ onChange, label, errorMessage, ...input }) {
   return (
     <>
       <div className="text-field">
-        <label>{label}</label>
         <input
           onChange={onChange}
           {...input}
@@ -16,6 +15,7 @@ function FormInput({ onChange, label, errorMessage, ...input }) {
           onFocus={() => input.name === "confirmPassword" && setFocused(true)}
           focused={focused.toString()}
         />
+        <label className={input.value && "shrink"}>{label}</label>
         <span className="error__msg">{errorMessage}</span>
       </div>
     </>

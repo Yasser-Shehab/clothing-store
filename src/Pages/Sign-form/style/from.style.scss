@@ -44,6 +44,11 @@
   }
 }
 
+@mixin shrinkLabel {
+  top: 0px;
+  font-size: 1.5rem;
+}
+
 .text-field {
   position: relative;
   border-radius: 5px;
@@ -57,26 +62,40 @@
     font-family: Arial, Helvetica, sans-serif;
     outline: none;
     background: none;
-    &:focus {
+    &:focus ~ label {
       background: #fff;
+      @include shrinkLabel();
     }
   }
   & label {
     position: absolute;
-
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     letter-spacing: 0.1rem;
-    top: -2px;
+    top: 25px;
     left: 1rem;
     // color: #2691d9;
     padding: 0 0.5rem;
-    background-color: #fff;
+    // background-color: #fff;
     color: #adadad;
     transform: translateY(-50%);
     pointer-events: none;
     transition: 0.5s ease-in-out;
+    &.shrink {
+      @include shrinkLabel();
+      background-color: #fff;
+    }
+  }
+  input:invalid[focused="true"] {
+    border: 1px solid red;
+    .text-field {
+    }
+  }
+
+  input:invalid[focused="true"] ~ .error__msg {
+    display: block;
   }
 }
+
 .forgot-pass {
   width: fit-content;
   margin-top: 1rem;
@@ -173,16 +192,4 @@
   color: red;
   font-size: 1.5rem;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-}
-
-.register-form {
-  input:invalid[focused="true"] {
-    border: 1px solid red;
-    .text-field {
-    }
-  }
-
-  input:invalid[focused="true"] ~ .error__msg {
-    display: block;
-  }
 }
