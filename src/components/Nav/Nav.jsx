@@ -1,14 +1,16 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Outlet, Link } from "react-router-dom";
+import { UserContext } from "../../contexts/user.context";
 import Footer from "../Footer/Footer";
 import "./style/Nav.style.scss";
+import { signOutUser } from "../../utils/firebase/firebase.utils.js";
 
 function Nav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const toggle = () => {
     setMobileMenuOpen((prev) => !prev);
   };
-  // onClick={toggle} className={isMobile ? "menu-btn open" : "menu-btn"}
+  const { currentUser } = useContext(UserContext);
 
   return (
     <>
@@ -29,9 +31,16 @@ function Nav() {
             <Link className="nav-link" to="/contact">
               CONTACT
             </Link>
-            <Link className="nav-link" to="/sign-in">
-              SIGN IN
-            </Link>
+            {currentUser ? (
+              <span className="nav-link" onClick={signOutUser}>
+                SIGN OUT
+              </span>
+            ) : (
+              <Link className="nav-link" to="/sign-in">
+                SIGN IN
+              </Link>
+            )}
+
             <Link className="nav-link" to="">
               <img className="nav__cart" src={process.env.PUBLIC_URL + "assets/images/bag.svg"} />
             </Link>

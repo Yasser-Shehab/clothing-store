@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import FormInput from "../FormInput/FormInput";
 import {
   createAuthUserWithEmailAndPassword,
@@ -17,7 +17,6 @@ function Register({ click }) {
   const [formSuccess, setformSuccess] = useState("");
   const [formData, setFormData] = useState(defaultFormData);
   const { displayName, email, password, confirmpassword } = formData;
-
   const inputs = [
     {
       id: 1,
@@ -74,7 +73,7 @@ function Register({ click }) {
       await createUserDocumentFromAuth(user, { displayName });
       setFormError((prev) => (prev = ""));
       setformSuccess((prev) => (prev = "Account has been Successfuly created"));
-      setTimeout(() => <Navigate to="/" />, 3000);
+      resetForm();
     } catch (error) {
       switch (error.code) {
         case "auth/email-already-in-use":
@@ -86,6 +85,11 @@ function Register({ click }) {
       console.log("user signUp Error :", error);
     }
   };
+
+  const resetForm = () => {
+    setFormData(defaultFormData);
+  };
+
   const closeErrorMenu = () => {
     setFormError((prev) => (prev = ""));
   };

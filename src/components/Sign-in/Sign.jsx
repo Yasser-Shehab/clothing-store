@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { getRedirectResult } from "firebase/auth";
 import { FcGoogle } from "react-icons/fc";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
@@ -10,6 +10,8 @@ import {
   signInAuthUserWithEmailAndPassword,
 } from "../../utils/firebase/firebase.utils";
 
+import { Navigate } from "react-router-dom";
+
 const defaultFormFields = {
   email: "",
   password: "",
@@ -20,10 +22,11 @@ const SignIn = ({ click }) => {
   const [formError, setFormError] = useState("");
   const { email, password } = signFields;
   const [showPass, setShowPass] = useState(false);
+
   const logGoogleUser = async () => {
-    const { user } = await signInWithGooglePopup();
-    const userDocRef = await createUserDocumentFromAuth(user);
+    await signInWithGooglePopup();
   };
+
   const togglePassword = () => {
     setShowPass((prev) => !prev);
   };
@@ -37,8 +40,7 @@ const SignIn = ({ click }) => {
     e.preventDefault();
 
     try {
-      const response = await signInAuthUserWithEmailAndPassword(email, password);
-      console.log(response);
+      const { user } = await signInAuthUserWithEmailAndPassword(email, password);
     } catch (error) {
       switch (error.code) {
         case "auth/user-not-found":
